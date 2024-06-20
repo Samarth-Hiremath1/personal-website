@@ -12,6 +12,10 @@ module.exports = {
         teal: "#00BFA6",
         orange: "#FFA500",
         purple: "#800080",
+        green: "#00FF00",
+        blue: "#0000FF",
+        rose: "#FF007F",
+        yellow: "#FFFF00",
       },
       fontFamily: {
         sans: ['Helvetica', 'Arial', 'sans-serif'],

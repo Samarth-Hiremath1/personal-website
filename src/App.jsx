@@ -1,48 +1,37 @@
-// src/App.jsx
 import React from 'react';
 import AboutMe from './components/AboutMe';
 import PreviousExperience from './components/PreviousExperience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import ContactMe from './components/ContactMe';
+import NavigationBar from './components/NavigationBar';
+import Leadership from './components/Leadership';
+
 
 const App = () => {
   return (
     <div>
-      <AboutMe />
-      <PreviousExperience />
-      <Projects />
-      <Skills />
-      <ContactMe />
+      <NavigationBar />
+      <div id="about-me">
+        <AboutMe />
+      </div>
+      <div id="previous-experience" className="pt-16">
+        <PreviousExperience />
+      </div>
+      <div id="projects" className="pt-16">
+        <Projects />
+      </div>
+      <div id="leadership" className="pt-16">
+        <Leadership />
+      </div>
+      <div id="skills" className="pt-16">
+        <Skills />
+      </div>
+      <div id="contact-me" className="pt-16">
+        <ContactMe />
+      </div>
     </div>
   );
 };
 
 export default App;
-
-
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
