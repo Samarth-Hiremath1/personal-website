@@ -18,9 +18,9 @@ const AboutMe = () => {
           className="w-1/2 rounded-l-lg object-cover"
         />
         <div className="p-8 flex flex-col justify-center">
-          <h1 className="text-4xl font-bold mb-2">I'm <span className="text-hoverColor">Samarth Hiremath</span>.</h1>
-          <h2 className="text-3xl font-bold mb-4"><span style={{ color: 'rgb(235, 178, 108)' }}>Software Engineer, Product Manager, and Entrepreneur.</span></h2>
-          <p className="text-sm">I'm probably the most passionate designer you will ever get to work with. If you have a great project that needs some amazing skills, I’m your guy.</p>
+          <h1 className="text-4xl font-bold mb-2">I'm <span className="text-hoverColor">Samarth Hiremath</span>,</h1>
+          <h2 className="text-3xl font-bold mb-4">an aspiring <span style={{ color: 'rgb(235, 178, 108)' }}>Software Engineer, Product Manager, and Entrepreneur.</span></h2>
+          <p className="text-sm">I'm pursuing a Computer Science degree with a minor in Technology Management at UC Davis, aiming to blend my passions for tech and business. In my free time, you'll find me strumming my guitar or exploring places, both natural and man-made!</p>
         </div>
       </div>
     </div>
