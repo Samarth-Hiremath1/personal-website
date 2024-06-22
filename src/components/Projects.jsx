@@ -52,13 +52,13 @@ const ProjectCard = ({ project }) => {
       />
       {/* Content */}
       <div className="p-4">
-        <h2 className="text-2xl text-white font-bold mb-2">{project.title}</h2>
+        <h2 className="text-2xl text-white font-bold mb-2 group-hover:text-hoverColor group-hover:translate-x-2 transition-transform">{project.title}</h2>
         <p className="text-lightGray mb-4">{project.description}</p>
         <br></br>
         <br></br>
         {/* Buttons */}
         {project.id !== 4 && (
-          <div className="absolute bottom-1 right-4 flex space-x-4 justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute bottom-1 right-4 flex space-x-4 justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <a
               href={project.demoLink}
               className="bg-teal-600 text-white py-0.5 px-4 rounded-lg"

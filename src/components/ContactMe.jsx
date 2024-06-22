@@ -6,7 +6,7 @@ const ContactMe = () => {
     <div className="bg-black py-16 text-center">
       <h1 className="text-4xl text-white font-bold mb-8">Contact Me</h1>
       <p className="text-white mb-4">Feel free to contact me via email.</p>
-      <a href="mailto:your-email@example.com" className="bg-teal text-black py-2 px-4 rounded-full">
+      <a href="mailto:samhiremath@ucdavis.edu" className="bg-teal text-black py-2 px-4 rounded-full">
         Email Me
       </a>
       <div className="flex justify-center space-x-8 mt-8">

@@ -8,7 +8,7 @@ const NavigationBar = () => {
     { id: 'previous-experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'leadership', label: 'Leadership' },
-    { id: 'skills', label: 'Skills' },
+    //{ id: 'skills', label: 'Skills' },
     { id: 'contact-me', label: 'Contact' },
   ];
 
