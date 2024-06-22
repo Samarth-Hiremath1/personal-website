@@ -23,6 +23,22 @@ module.exports = {
       fontFamily: {
         sans: ['Helvetica', 'Arial', 'sans-serif'],
       },
+      keyframes: {
+        glow: {
+          '0%': {
+            boxShadow: '0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc',
+          },
+          '50%': {
+            boxShadow: '0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 50px #00ffcc',
+          },
+          '100%': {
+            boxShadow: '0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc',
+          },
+        },
+      },
+      animation: {
+        glow: 'glow 1.5s infinite',
+      },
     },
   },
   plugins: [],
