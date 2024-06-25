@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Sen', 'sans-serif'],
+      },
       colors: {
         black: "#000000",
         darkGray: "#2E2E2E",
@@ -19,9 +22,8 @@ module.exports = {
         hoverColor: "rgb(117, 251, 253)", 
         hoverColor2: "rgb(175, 231, 127)",
         newOrange: "rgb(235, 178, 108)",
-      },
-      fontFamily: {
-        sans: ['Helvetica', 'Arial', 'sans-serif'],
+        darkGrey2: '#181822',
+        lightGrey2: '#8C8B90',
       },
       keyframes: {
         glow: {
@@ -42,4 +44,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
