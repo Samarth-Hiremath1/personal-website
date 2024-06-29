@@ -81,7 +81,7 @@ const ProjectCard = ({ project }) => {
 // Projects component
 const Projects = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8 font-mono">
       <h1 className="text-4xl text-white font-bold text-center mb-12">Projects</h1>
       <p className="text-lightGray italic text-center mb-20">Some projects I worked on over the past few years</p>
       {/* Grid layout */}

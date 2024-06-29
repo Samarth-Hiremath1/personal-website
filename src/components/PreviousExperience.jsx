@@ -9,7 +9,7 @@ const experiences = [
     title: "Co-Founder / Project Manager",
     company: "Swift",
     dates: "Present",
-    description: "I am leading a cross-functional team in UI/UX framework design and prototype development. I leveraged front-end expertise and project management skills to achieve success in UC Davis entrepreneurship competitions. I coordinate customer testimonials, translate user feedback into technical requirements, and oversee the development process.",
+    description: "I'm leading a cross-functional team in UI/UX framework design and prototype development. I leveraged front-end expertise and project management skills to achieve success in UC Davis entrepreneurship competitions. I coordinate customer testimonials, translate user feedback into technical requirements, and oversee the development process.",
     logo: SwiftLogo,
     color: "text-green",
   },
@@ -49,7 +49,7 @@ const experiences = [
 
 const PreviousExperience = () => {
   return (
-    <div id="experience" className="bg-black py-16">
+    <div id="experience" className="bg-black py-16 font-mono">
       <h1 className="text-4xl text-white font-bold text-center mb-12">Previous Experience</h1>
       <div className="px-16 space-y-24">
         {experiences.map((exp, index) => (

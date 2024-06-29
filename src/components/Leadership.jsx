@@ -6,7 +6,7 @@ import pythonBootcamp from '../images/summer-python-bootcamp.jpg';
 const leadershipExperiences = [
   {
     title: "SkillsUSA CA State Officer",
-    description: "As a State Officer (2022-2023), I had the amazing opportunity to organize events for the 54,000 CA members, including the State Leadership and Skills Conference with 3,500 participants. I initiated the President's Council to boost school collaboration and communication. I also had the chance to advocated for career education in Washington D.C., train 275 high school officers, and plan a community project collecting 2,500 stuffed animals for foster homes.<br /><br />I'm really grateful for this opportunity to develop countless skills and learn from so many amazing people.",
+    description: "As a State Officer (2022-2023), I had the amazing opportunity to organize events for the 54,000 CA members, including the State Leadership and Skills Conference with 3,500 participants. I initiated the President's Council to boost school collaboration and communication.<br /><br />I also had the chance to advocate for career education in Washington D.C., train 275 high school officers, and plan a community project collecting 2,500 stuffed animals for foster homes.<br /><br />I'm really grateful for this opportunity to develop countless skills and learn from so many amazing people.",
     image: skillsUSA,
     color: "bg-purple-600",
   },
@@ -20,10 +20,10 @@ const leadershipExperiences = [
 
 const Leadership = () => {
   return (
-    <div className="bg-black py-16">
+    <div className="bg-black py-16 font-mono">
       <h1 className="text-4xl text-white font-bold text-center mb-16">Leadership</h1>
       <div className="px-8">
-        <h2 className="text-3xl text-white font-semibold text-center mb-10">Leadership Philosophy</h2>
+        <h2 className="text-3xl text-white font-semibold text-center mb-10">Philosophy</h2>
         <p className="text-lightGray italic text-center mb-20">"The best way to predict the future is to create it." - Peter Drucker</p>
         
         <h2 className="text-3xl text-white font-semibold text-center mb-10">Leadership and Community</h2>
@@ -57,4 +57,3 @@ const Leadership = () => {
 };
 
 export default Leadership;
-

@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-import nprogress from 'nprogress';
-import 'nprogress/nprogress.css';
+//import nprogress from 'nprogress';
+//import 'nprogress/nprogress.css';
 
 
 

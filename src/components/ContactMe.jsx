@@ -1,12 +1,11 @@
 import React from 'react';
-
 import linkedInicon from '../images/linkedin-logo.png';
 import githubicon from '../images/github-icon.svg';
 import instagramicon from '../images/instagram-icon.png';
 
 const ContactMe = () => {
   return (
-    <div className="bg-black py-16 text-center">
+    <div className="bg-black py-16 text-center font-mono"> {/* Changed font */}
       <h1 className="text-4xl text-white font-bold mb-8">Contact Me</h1>
       <p className="text-white mb-4">Feel free to reach out! I love meeting new people.</p>
       <br></br>
@@ -33,3 +32,4 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
+
