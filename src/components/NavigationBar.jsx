@@ -57,7 +57,7 @@ const NavigationBar = () => {
     <div className="relative">
       <nav className="sticky top-0 w-full z-50 flex justify-between items-center px-10 bg-transparent" style={{ paddingRight: '5%' }}>
         <div className="font-bold text-white text-3xl"> {/* Increased font size */}
-          <a href="https://www.google.com">Samarth.H</a>
+          <a href="https://bit.ly/samarth-h">Samarth.H</a>
         </div>
         <div className="flex space-x-20 items-center"> {/* Increased spacing */}
           {sections.slice(0, 3).map((section) => (

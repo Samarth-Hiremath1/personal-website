@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Sen', 'sans-serif'],
-        mono: ['DM Mono', 'monospace'],  // Add this line
+        mono: ['DM Mono', 'monospace'],
       },
       colors: {
         black: "#000000",
@@ -20,76 +20,34 @@ module.exports = {
         blue: "rgb(96, 155, 255)",
         rose: "rgb(233, 93, 144)",
         yellow: "rgb(235, 179, 85)",
-        hoverColor: "rgb(117, 251, 253)", 
-        hoverColor2: "rgb(104, 196, 94)",   //"rgb(175, 231, 127)",
+        hoverColor: "rgb(117, 251, 253)",
+        hoverColor2: "rgb(104, 196, 94)",
         newOrange: "rgb(235, 178, 108)",
         darkGrey2: '#181822',
         lightGrey2: '#8C8B90',
       },
       keyframes: {
-        glow: {
-          '0%': {
-            boxShadow: '0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc',
-          },
-          '50%': {
-            boxShadow: '0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 50px #00ffcc',
-          },
-          '100%': {
-            boxShadow: '0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc',
-          },
+        fadeInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-100%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
+        fadeInRight: {
+          '0%': { opacity: '0', transform: 'translateX(100%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        fadeInLeft: 'fadeInLeft 1s ease-out',
+        fadeInRight: 'fadeInRight 1s ease-out',
+        fadeIn: 'fadeIn 1s 1.5s ease-out forwards',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
-
-
-
-// module.exports = {
-//   content: [
-//     "./src/**/*.{js,jsx,ts,tsx}",
-//   ],
-//   theme: {
-//     extend: {
-//       fontFamily: {
-//         sans: ['Sen', 'sans-serif'],
-//       },
-//       colors: {
-//         black: "#000000",
-//         darkGray: "#2E2E2E",
-//         white: "#FFFFFF",
-//         lightGray: "#D3D3D3",
-//         teal: "#00BFA6",
-//         orange: "#ff8a58",
-//         purple: "#800080",
-//         green: "rgb(82, 178, 155)",
-//         blue: "rgb(96, 155, 255)",
-//         rose: "rgb(233, 93, 144)",
-//         yellow: "rgb(235, 179, 85)",
-//         hoverColor: "rgb(117, 251, 253)", 
-//         hoverColor2: "rgb(104, 196, 94)",   //"rgb(175, 231, 127)",
-//         newOrange: "rgb(235, 178, 108)",
-//         darkGrey2: '#181822',
-//         lightGrey2: '#8C8B90',
-//       },
-//       keyframes: {
-//         glow: {
-//           '0%': {
-//             boxShadow: '0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc',
-//           },
-//           '50%': {
-//             boxShadow: '0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 50px #00ffcc',
-//           },
-//           '100%': {
-//             boxShadow: '0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc',
-//           },
-//         },
-//       },
-//       animation: {
-//         glow: 'glow 1.5s infinite',
-//       },
-//     },
-//   },
-//   plugins: [],
-// };
