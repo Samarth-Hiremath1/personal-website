@@ -6,12 +6,12 @@ import Skills from './components/Skills';
 import ContactMe from './components/ContactMe';
 import NavigationBar from './components/NavigationBar';
 import Leadership from './components/Leadership';
-
+import ScrollProgressBar from './components/ProgressBar';
 
 const App = () => {
   return (
     <div>
-      <NavigationBar />
+      <ScrollProgressBar />
       <div id="about-me">
         <AboutMe />
       </div>

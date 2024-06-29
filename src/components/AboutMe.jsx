@@ -1,11 +1,13 @@
 import React from 'react';
-import profilePic from '../images/samarth-pic1.jpg'; 
+import profilePic from '../images/samarth-pic1.jpg';
+import NavigationBar from './NavigationBar';
 
 const AboutMe = () => {
   return (
-    <div className="relative bg-black min-h-screen flex items-center font-sans"> {/* Added font-sans class here */}
-      <div className="absolute right-0 w-2/3 bg-darkGrey2 min-h-full z-0"></div>
-      <div className="relative w-full flex items-center z-10">
+    <div className="relative bg-black min-h-[90vh] flex flex-col font-sans z-30"> {/* Reduced height by 10% */}
+      <div className="absolute right-0 w-2/3 bg-darkGrey2 min-h-full z-0" style={{ marginBottom: '10%' }}></div>
+      <NavigationBar className="z-50"/> {/* Ensure high z-index */}
+      <div className="relative w-full flex items-center z-10 mt-28"> {/* Added margin-top */}
         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1/2">
           <img 
             src={profilePic} 
@@ -20,7 +22,7 @@ const AboutMe = () => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-lightGrey2 mt-4">
             An aspiring SWE, Product Manager, and Entrepreneur.
           </h2>
-          <div className="mt-6"> {/* Added margin top here */}
+          <div className="mt-6">
             <p className="text-base md:text-lg lg:text-xl xl:text-2xl">
               I aim to pursue my greatest passions of Tech and Business while studying Computer Science and minoring in Technology Management @ UC Davis. In my free time, I love playing guitar and exploring new places and experiences, both in nature and man-made.
             </p>
@@ -32,6 +34,54 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import profilePic from '../images/samarth-pic1.jpg'; 
+
+// //import profilePic from '../images/samarth-pic2.jpg';
+
+// const AboutMe = () => {
+//   return (
+//     <div className="relative bg-black min-h-screen flex items-center font-sans">
+//       <div className="absolute right-0 w-2/3 bg-darkGrey2 min-h-full z-0" style={{ marginBottom: '10%'}}></div> {/* Reduced the height slightly from the bottom */}
+//       <div className="relative w-full flex items-center z-10">
+//         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1/2">
+//           <img 
+//             src={profilePic} 
+//             alt="Samarth Hiremath" 
+//             className="w-full h-auto object-contain"
+//           />
+//         </div>
+//         <div className="relative z-20 text-white py-8" style={{ paddingLeft: '45%', paddingRight: '5%' }}>
+//           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold leading-tight">
+//             I'm Samarth Hiremath. 
+//           </h1>
+//           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-lightGrey2 mt-4">
+//             An aspiring SWE, Product Manager, and Entrepreneur.
+//           </h2>
+//           <div className="mt-6">
+//             <p className="text-base md:text-lg lg:text-xl xl:text-2xl">
+//               I aim to pursue my greatest passions of Tech and Business while studying Computer Science and minoring in Technology Management @ UC Davis. In my free time, I love playing guitar and exploring new places and experiences, both in nature and man-made.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default AboutMe;
+
+
 
 
 

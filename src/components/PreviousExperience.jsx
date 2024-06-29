@@ -49,7 +49,7 @@ const experiences = [
 
 const PreviousExperience = () => {
   return (
-    <div className="bg-black py-16">
+    <div id="experience" className="bg-black py-16">
       <h1 className="text-4xl text-white font-bold text-center mb-12">Previous Experience</h1>
       <div className="px-16 space-y-24">
         {experiences.map((exp, index) => (
