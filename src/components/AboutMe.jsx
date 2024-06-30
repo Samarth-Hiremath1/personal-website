@@ -1,6 +1,7 @@
 import React from 'react';
 import profilePic from '../images/samarth-pic1.jpg';
 import NavigationBar from './NavigationBar';
+import './styles.css';
 
 const AboutMe = () => {
   return (
@@ -10,12 +11,20 @@ const AboutMe = () => {
       <div className="relative w-full flex items-center z-10 mt-28">
         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1/2">
           <img 
+            src={profilePic} 
+            alt="Samarth Hiremath" 
+            className="w-full h-auto object-contain fadeInLeft"
+          />
+        </div>
+        
+        {/* <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1/2">
+          <img 
              src={profilePic} 
              alt="Samarth Hiremath" 
              className="w-full h-auto object-contain"
              style={{ animationDelay: '0s', animationDuration: '2s', animationFillMode: 'forwards', animationName: 'fadeInLeft'}}
            />
-        </div>
+        </div> */}
         <div className="relative z-20 text-white py-8 animate-fadeInRight" style={{ paddingLeft: '45%', paddingRight: '5%' }}>
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-5xl font-bold leading-tight" style={{ animationDelay: '0s', animationDuration: '1.5s', animationFillMode: 'forwards', animationName: 'fadeInRight'}}>
             I'm Samarth Hiremath.
