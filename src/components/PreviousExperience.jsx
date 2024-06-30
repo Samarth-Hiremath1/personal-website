@@ -9,7 +9,7 @@ const experiences = [
     title: "Co-Founder / Project Manager",
     company: "Swift",
     dates: "Present",
-    description: "I'm leading a cross-functional team in UI/UX framework design and prototype development. I leveraged front-end expertise and project management skills to achieve success in UC Davis entrepreneurship competitions. I coordinate customer testimonials, translate user feedback into technical requirements, and oversee the development process.",
+    description: "I'm leading a cross-functional team in UI/UX framework design, prototype development, and marketing operations. Togather, my team and I achieved success in UC Davis entrepreneurship competitions. Using project management skills, I help coordinate customer testimonials, translate user feedback into technical requirements, and oversee the development process.",
     logo: SwiftLogo,
     color: "text-green",
   },
