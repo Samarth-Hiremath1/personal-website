@@ -1,9 +1,9 @@
-import React from 'react';
-
+import React, { useEffect, useRef, useState } from 'react';
 import funWithFlora from '../images/fun-with-flora.png';
 import mentalHealthConnect from '../images/mentalhealth-connect.png';
 import blackjackAI from '../images/blackjack-ai.jpg';
 import miraBrands from '../images/mira-brands.gif';
+import 'intersection-observer'; // Polyfill
 
 const projectsData = [
   {
@@ -41,36 +41,19 @@ const projectsData = [
 ];
 
 // ProjectCard component
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, isLeft }) => {
   return (
-    <div className="relative group transform hover:scale-105 transition duration-300 bg-gray-800 rounded-lg overflow-hidden">
-      {/* Image */}
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-68 object-cover" // Increased height
-      />
-      {/* Content */}
+    <div className={`project-card ${isLeft ? 'left' : 'right'} relative group transform hover:scale-105 transition duration-300 bg-gray-800 rounded-lg overflow-hidden`}>
+      <img src={project.image} alt={project.title} className="w-full h-68 object-cover" />
       <div className="p-4">
         <h2 className="text-2xl text-white font-bold mb-2 group-hover:text-hoverColor group-hover:translate-x-2 transition-transform">{project.title}</h2>
         <p className="text-lightGray mb-4">{project.description}</p>
-        <br></br>
-        <br></br>
-        {/* Buttons */}
+        <br />
+        <br />
         {project.id !== 4 && (
           <div className="absolute bottom-1 right-4 flex space-x-4 justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <a
-              href={project.demoLink}
-              className="bg-teal-600 text-white py-0.5 px-4 rounded-lg"
-            >
-              Demo
-            </a>
-            <a
-              href={project.githubLink}
-              className="bg-teal-600 text-white py-0.5 px-4 rounded-lg"
-            >
-              GitHub
-            </a>
+            <a href={project.demoLink} className="bg-teal-600 text-white py-0.5 px-4 rounded-lg">Demo</a>
+            <a href={project.githubLink} className="bg-teal-600 text-white py-0.5 px-4 rounded-lg">GitHub</a>
           </div>
         )}
       </div>
@@ -80,24 +63,46 @@ const ProjectCard = ({ project }) => {
 
 // Projects component
 const Projects = () => {
+  const [observer, setObserver] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateX(0)';
+        }
+      });
+    };
+
+    const observerInstance = new IntersectionObserver(handleScroll, {
+      threshold: Array.from({ length: 101 }, (_, index) => index / 100),
+    });
+
+    setObserver(observerInstance);
+
+    return () => observerInstance.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach((card) => {
+      if (observer) {
+        observer.observe(card);
+      }
+    });
+  }, [observer]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 font-mono">
       <h1 className="text-4xl text-white font-bold text-center mb-12">Projects</h1>
       <p className="text-lightGray italic text-center mb-20">Some projects I worked on over the past few years</p>
-      {/* Grid layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-8 lg:px-32">
-        <div className="md:col-span-1 md:row-start-1 relative">
-          <ProjectCard project={projectsData[0]} />
-        </div>
-        <div className="md:col-start-2 md:row-start-1 relative" style={{ marginTop: '12rem' }}>
-          <ProjectCard project={projectsData[1]} />
-        </div>
-        <div className="md:col-span-1 md:row-start-2 relative" style={{ marginTop: '0rem' }}>
-          <ProjectCard project={projectsData[2]} />
-        </div>
-        <div className="md:col-start-2 md:row-start-2 relative" style={{ marginTop: '12rem' }}>
-          <ProjectCard project={projectsData[3]} />
-        </div>
+        {projectsData.map((project, index) => (
+          <div key={project.id} className="relative" style={{ marginTop: index % 2 === 1 ? '12rem' : '0rem' }}>
+            <ProjectCard project={project} isLeft={index % 2 === 0} />
+          </div>
+        ))}
       </div>
     </div>
   );
