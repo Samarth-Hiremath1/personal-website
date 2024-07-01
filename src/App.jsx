@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AboutMe from './components/AboutMe';
 import PreviousExperience from './components/PreviousExperience';
 import Projects from './components/Projects';
@@ -6,7 +6,7 @@ import Skills from './components/Skills';
 import ContactMe from './components/ContactMe';
 import NavigationBar from './components/NavigationBar';
 import Leadership from './components/Leadership';
-import ScrollProgressBar from './components/ProgressBar';
+import ScrollProgressBar from './components/ProgressBar'; 
 
 const App = () => {
   return (
