@@ -41,3 +41,14 @@
 .fade-in-right {
   transform: translateX(25%);
 }
+
+
+
+/* Define z-index layers */
+.z-background { z-index: 10; } /* For background elements */
+.z-content { z-index: 20; } /* For regular content */
+.z-navbar { z-index: 50; } /* For navigation bar */
+.z-overlay { z-index: 100; } /* For overlays or modals */
+
+/* Ensure background elements have lower z-index */
+.bg-darkGrey2 { z-index: 10; } /* Example for background */

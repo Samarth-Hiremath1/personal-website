@@ -43,6 +43,14 @@ module.exports = {
           '0%': { height: '0' },
           '100%': { height: '100%' },
         },
+        slideDown: {
+          '0%': { opacity: '0', transform: 'translateY(-100%)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideUp: {
+          '0%': { opacity: '1', transform: 'translateY(0)' },
+          '100%': { opacity: '0', transform: 'translateY(-100%)' },
+        },
       },
       animation: {
         fadeInLeft: 'fadeInLeft 1s ease-out',
@@ -51,6 +59,8 @@ module.exports = {
         fadeInDelayed: 'fadeIn 0.5s 0.5s ease-out forwards',
         fadeInDelayed2: 'fadeIn 0.5s 1s ease-out forwards',
         drawLine: 'drawLine 1.5s ease-out forwards',
+        slideDown: 'slideDown 0.5s ease-out forwards',
+        slideUp: 'slideUp 0.5s ease-in forwards',
       },
     },
   },
