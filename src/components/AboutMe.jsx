@@ -21,17 +21,17 @@ const AboutMe = () => {
     <div className={`relative ${isMobile ? '' : 'bg-black'} min-h-[94vh] flex flex-col font-mono z-30`}>
       {isMobile ? (
         <>
-          <NavigationBar className="z-50"/>
+          <NavigationBar className="z-50 mt-4"/>
           <div className="w-full flex flex-col items-center bg-black">
             <img 
               src={profilePic} 
               alt="Samarth Hiremath" 
-              className="w-full h-auto object-cover fadeInLeft"
+              className="w-full h-auto object-cover fadeInLeft mt-4"
               style={{ animationDelay: '0s', animationDuration: '1.5s', animationFillMode: 'forwards', animationName: 'fadeInLeft'}}
             />
             <div className="w-full bg-darkGrey2 flex flex-col justify-end pb-10">
               <div className="text-white px-5">
-                <h1 className="text-4xl font-bold leading-tight animate-fadeInRight">I'm Samarth Hiremath.</h1>
+                <h1 className="text-4xl font-bold leading-tight animate-fadeInRight mt-8">I'm Samarth Hiremath.</h1>
                 <h2 className="text-2xl font-bold text-lightGrey2 mt-4 animate-fadeInRight" style={{ animationDuration: '1.5s' }}>An aspiring SWE, Product Manager, and Entrepreneur.</h2>
                 <p className="text-base mt-6 animate-fadeInRight" style={{ animationDelay: '0.1s', animationDuration: '1.5s' }}>
                   I'm pursuing my greatest passions of Tech and Business while studying Computer Science and minoring in Technology Management @ UC Davis.
