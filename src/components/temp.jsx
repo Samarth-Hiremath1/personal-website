@@ -1,147 +1,97 @@
-import React from 'react';
-import profilePic from '../images/samarth-pic1.jpg';
-import NavigationBar from './NavigationBar';
-import './styles.css';
+import React, { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import SwiftLogo from '../images/Swift-logo.png';
+import OptiwiseLogo from '../images/Optiwise-logo.svg';
+import MiraBrandsLogo from '../images/Mira-Brands-logo.webp';
+import CortexxusLogo from '../images/Cortexxus-logo.png';
 
-const AboutMe = () => {
+const experiences = [
+  {
+    title: "Co-Founder / Project Manager",
+    company: "Swift",
+    dates: "Present",
+    description: "I'm leading a cross-functional team in UI/UX framework design, prototype development, and marketing operations. Togather, my team and I achieved success in UC Davis entrepreneurship competitions. Using project management skills, I help coordinate customer testimonials, translate user feedback into technical requirements, and oversee the development process.",
+    logo: SwiftLogo,
+    color: "text-green",
+  },
+  {
+    title: "Software Engineering Intern",
+    company: "Optiwise.ai, Inc",
+    dates: "Jan 2024 - Jun 2024",
+    description: "I developed 5 responsive web pages using React and Node.js, creating reusable components that reduced code redundancy by 30%. I implemented 10 dynamic backend routes with FastAPI and helped develop a scalable SQL database schema. I collaborated with UI/UX designers to build a highly responsive website.",
+    logo: OptiwiseLogo,
+    color: "text-blue",
+  },
+  {
+    title: "UI/UX Consultant",
+    company: "Mira Brands",
+    dates: "Oct 2023 - Dec 2023",
+    description: "I created mobile app mock-ups for a recipe-sharing platform using Figma, designing over 10 pages with dynamic animations. I analyzed competitor and market data, integrating unique features like an ingredient spotlight. I blended user-centric design with market insights to enhance the overall product.",
+    logo: MiraBrandsLogo,
+    color: "text-yellow",
+  },
+  {
+    title: "Machine Learning Engineer Intern",
+    company: "Cortexxus",
+    dates: "Jun 2023 - Sep 2023",
+    description: "I contributed to enhancing a seizure prediction LLM in a remote five-member team. I conducted research on LLM development and optimization for EEG data processing. I implemented robust version control and UNIX-based workflows, reducing code conflicts by 25% and demonstrating proficiency in development operations.",
+    logo: CortexxusLogo,
+    color: "text-rose",
+  },
+];
+
+const PreviousExperience = () => {
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const { ref: triggerRef, inView } = useInView({ threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView && activeIndex === -1) {
+      setActiveIndex(0);
+    }
+  }, [inView, activeIndex]);
+
+  useEffect(() => {
+    if (activeIndex >= 0 && activeIndex < experiences.length) {
+      const timer = setTimeout(() => {
+        setActiveIndex((prevIndex) => prevIndex + 1);
+      }, 1500); 
+
+      return () => clearTimeout(timer);
+    }
+  }, [activeIndex]);
+
   return (
-    <div className="relative bg-black min-h-[92vh] flex flex-col font-mono z-30">
-      <div className="absolute right-0 w-2/3 bg-darkGrey2 min-h-full z-0" style={{ marginBottom: '20%' }}></div>
-      <NavigationBar className="z-50"/>
-      <div className="relative w-full flex items-center z-10 mt-28">
-        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1/2">
-          <img 
-            src={profilePic} 
-            alt="Samarth Hiremath" 
-            className="w-full h-auto object-contain fadeInLeft"
-          />
-        </div>
-        
-        <div className="relative z-20 text-white py-8 animate-fadeInRight" style={{ paddingLeft: '45%', paddingRight: '5%' }}>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-5xl font-bold leading-tight" style={{ animationDelay: '0s', animationDuration: '1.5s', animationFillMode: 'forwards', animationName: 'fadeInRight'}}>
-            I'm Samarth Hiremath.
-          </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold text-lightGrey2 mt-4"style={{ animationDelay: '0s', animationDuration: '1.5s', animationFillMode: 'forwards', animationName: 'fadeInRight'}}>
-            An aspiring SWE, Product Manager, and Entrepreneur.
-          </h2>
-          <div className="mt-6">
-            <p className="text-base md:text-lg lg:text-xl xl:text-2xl opacity-0 animate-fadeInRight" style={{ animationDelay: '0.1s', animationDuration: '1.5s', animationFillMode: 'forwards', animationName: 'fadeInRight'}}>
-              I'm pursuing my greatest passions of Tech and Business while studying Computer Science and minoring in Technology Management @ UC Davis.
-            </p>
-            <p className="text-base md:text-lg lg:text-xl xl:text-2xl mt-3 opacity-0 animate-fadeInRight" style={{ animationDelay: '0.2s', animationDuration: '1.5s', animationFillMode: 'forwards', animationName: 'fadeInRight'}}>
-              In my free time, I love playing guitar and exploring new places and experiences, both in nature and man-made.
-            </p>
+    <div id="experience" className="bg-black py-16 font-mono">
+      <h1 className="text-4xl text-white font-bold text-center mb-12">Previous Experience</h1>
+      <div ref={triggerRef} className="px-16 space-y-24">
+        {experiences.map((exp, index) => (
+          <div
+            key={index}
+            className={`flex items-center relative space-x-6 ${index <= activeIndex ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'}`}
+          >
+
+            <div className="w-1/3 text-right pr-6">
+              <h3 className={`text-2xl font-bold ${exp.color} `} style={{ animationDelay: '2.5s' }}>{exp.company}</h3>
+              <p className={`text-lightGray italic `} style={{ animationDelay: '2.5s' }}>{exp.dates}</p>
+            </div>
+            <div className="w-1/12 flex justify-center relative">
+              <div className={`h-36 w-36 bg-white p-1 rounded-full overflow-hidden z-10 `}>
+                <img src={exp.logo} alt={exp.company} className="h-full w-full object-contain" />
+              </div>
+              {index < experiences.length - 1 && (
+                <div className={`absolute h-full w-1 bg-white top-full left-1/2 transform -translate-x-1/2 ${index <= activeIndex ? 'animate-drawLine' : ''}`} />
+              )}
+            </div>
+            <div className="w-1/2 pl-6">
+              <h2 className={`text-lg text-white font-bold `} style={{ animationDelay: '2.5s' }}>{exp.title}</h2>
+              <p className={`text-lightGray `} style={{ animationDelay: '2.5s' }}>{exp.description}</p>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default AboutMe;
+export default PreviousExperience;
 
-
-
-
-
-
-import React, { useState, useEffect } from 'react';
-import { Squash as Hamburger } from 'hamburger-react';
-
-
-const NavigationBar = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  const sections = [
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'leadership', label: 'Leadership' },
-    { id: 'contact-me', label: 'Contact' },
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight;
-      const totalHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollProgress = (scrollPosition / totalHeight) * 100;
-      setScrollProgress(scrollProgress);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleSmoothScroll = (e, sectionId) => {
-    e.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const targetPosition = section.getBoundingClientRect().top + window.pageYOffset;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
-      const duration = 2000; // milliseconds
-      let start = null;
-
-      const step = (timestamp) => {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
-        const scrollToPosition = easeInOutCubic(progress, startPosition, distance, duration);
-        window.scrollTo(0, scrollToPosition);
-        if (progress < duration) {
-          window.requestAnimationFrame(step);
-        }
-      };
-
-      window.requestAnimationFrame(step);
-    }
-  };
-
-  const easeInOutCubic = (t, b, c, d) => {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t * t + b;
-    t -= 2;
-    return (c / 2) * (t * t * t + 2) + b;
-  };
-
-  return (
-    <div className="relative animate-fadeIn">
-      <nav className="sticky top-0 w-full z-50 flex justify-between items-center px-10 bg-transparent" style={{ paddingRight: '5%' }}>
-        <div className="font-bold text-white text-3xl"> {/* Increased font size */}
-          <a href="https://bit.ly/samarth-h">Samarth.H</a>
-        </div>
-        <div className="flex space-x-20 items-center"> {/* Increased spacing */}
-          {sections.slice(0, 3).map((section) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
-              className="text-lightGrey2 hover:text-hoverColor transition-colors text-lg" // Increased font size
-              onClick={(e) => handleSmoothScroll(e, section.id)}
-            >
-              {section.label}
-            </a>
-          ))}
-          <a
-            href={`#${sections[3].id}`}
-            className="p-3 text-white font-bold contact-button text-lg" // Increased font size
-            onClick={(e) => handleSmoothScroll(e, sections[3].id)}
-            style={{
-              backgroundColor: 'rgb(76, 36, 221)',
-              padding: '30px 30px',
-              borderRadius: '0px',
-              transition: 'background-color 300ms ease-in-out',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgb(76, 36, 221, 0.8)'; // Darken slightly on hover
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgb(76, 36, 221)'; // Revert to original color
-            }}
-          >
-            {sections[3].label}
-          </a>
-        </div>
-      </nav>
-    </div>
-  );
-};
-
-export default NavigationBar;

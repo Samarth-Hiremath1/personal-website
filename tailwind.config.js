@@ -58,7 +58,7 @@ module.exports = {
         fadeIn: 'fadeIn 1s ease-out forwards',
         fadeInDelayed: 'fadeIn 0.5s 0.5s ease-out forwards',
         fadeInDelayed2: 'fadeIn 0.5s 1s ease-out forwards',
-        drawLine: 'drawLine 1.5s ease-out forwards',
+        drawLine: 'drawLine 0.5s ease-out forwards',
         slideDown: 'slideDown 0.5s ease-out forwards',
         slideUp: 'slideUp 0.5s ease-in forwards',
       },
