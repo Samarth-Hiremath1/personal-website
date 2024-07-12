@@ -46,8 +46,8 @@ const MobileExperienceView = ({ activeIndex }) => (
       <div key={index} className={`flex flex-row items-start space-x-6 ${index <= activeIndex ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'}`}>
         <div className="relative flex flex-col items-center space-y-4">
           {/* Tripled the size of the logos and added a white circle background */}
-          <div className="w-36 h-36 rounded-full bg-white flex justify-center items-center">
-            <img src={exp.logo} alt={`${exp.company} logo`} className="w-36 h-36 rounded-full object-contain" />
+          <div className="w-28 h-28 rounded-full bg-white flex justify-center items-center">
+            <img src={exp.logo} alt={`${exp.company} logo`} className="w-28 h-28 rounded-full object-contain" />
           </div>
           {index !== experiences.length - 1 && activeIndex > index && (
             <div className="absolute top-[calc(89%)] left-1/2 transform -translate-x-1/2 w-1 bg-gray-300 h-96 animate-drawLine"></div>
