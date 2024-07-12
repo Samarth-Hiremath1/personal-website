@@ -15,19 +15,19 @@ const App = () => {
       <div id="about-me">
         <AboutMe />
       </div>
-      <div id="previous-experience" className="pt-16">
+      <div id="previous-experience" className="mt-40">
         <PreviousExperience />
       </div>
-      <div id="projects" className="pt-16">
+      <div id="projects" className="mt-16">
         <Projects />
       </div>
-      <div id="leadership" className="pt-16">
+      <div id="leadership" className="mt-16">
         <Leadership />
       </div>
       {/* <div id="skills" className="pt-16">
         <Skills />
       </div> */}
-      <div id="contact-me" className="pt-16">
+      <div id="contact-me" className="mt-16">
         <ContactMe />
       </div>
     </div>
